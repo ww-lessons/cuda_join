@@ -56,7 +56,7 @@ int main(int argc, char *argv[]) {
     FactTableOut *factOut = calloc(sizeof(FactTableOut), FACT_SIZE);
     for(int i = 0; i < DIM_COUNT; i++) {
         for(int j = 0; j < FACT_SIZE; j++) {
-            sprintf(factIn[j].knz[i], "KNZ%d-%d", i, j);
+            sprintf(factIn[j].knz[i], "KNZ%d-%d", i % DIM_COUNT, j % DIM_SIZE);
         }
     }
 
