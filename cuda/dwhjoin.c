@@ -1,3 +1,7 @@
+/*
+* TODO: FUNKTIONIERT NOCH NICHT -> LIEFERT MAL WIEDER IMMER 0 !!! d.h. das muss ich wohl neu coden...
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -23,16 +27,11 @@ typedef struct _factOut {
 
 // Funktion
 
-__device__ int nvstrncmp(char *a, char *b, int len) {
-    for(int i = 0; i < len; i++) {
-        if(a[i] == 0 && b[i] == 0) {
-            return 0;
-        }
-        if(a[i] == 0 || b[i] == 0) {
-            return 1;
-        }
-        if(a[i] != b[i]) {
-            return 1;
+__device__ int nvstrncmp(const char* s1, const char* s2, size_t n)
+{
+    while(n--) {
+        if(*s1++!=*s2++) {
+            return *(unsigned char*)(s1 - 1) - *(unsigned char*)(s2 - 1);
         }
     }
     return 0;
@@ -50,7 +49,7 @@ __global__ void join(DimTable *dim, int dim_len,
         for(int j = 0; j < dim_len; j++) {
             if(nvstrncmp(dim[j].knz, in[i].knz[idx], KNZ_LEN) == 0) {
                 out[i].id[idx] = dim[j].id;
-                j = dim_len; // den inneren Schleifendurchlauf vorzeitig abbrechen
+                break;
             }
         }
     }
