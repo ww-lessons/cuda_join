@@ -3,9 +3,9 @@
 #include <string.h>
 
 #define KNZ_LEN 20
-#define DIM_COUNT 5
-#define DIM_SIZE 1000
-#define FACT_SIZE 100000
+#define DIM_COUNT 3
+#define DIM_SIZE 4000
+#define FACT_SIZE 1000000
 
 // Datenstruktur
 
