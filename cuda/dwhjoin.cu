@@ -91,7 +91,7 @@ int main(int argc, char *argv[]) {
     printf("Fakten und Dimmensionen vorbereitet\n");
     for(int i = 0; i < DIM_COUNT; i++) {
         cudaMemcpy(dev_dim, dims[i], sizeof(DimTable) * DIM_SIZE, cudaMemcpyHostToDevice);
-        join<<<1, 100>>>(dev_dim, DIM_SIZE, 
+        join<<<1, 200>>>(dev_dim, DIM_SIZE, 
              dev_factIn, dev_factOut, FACT_SIZE, i);
         //cudaDeviceSynchronize();        
     }    
