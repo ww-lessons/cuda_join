@@ -1,7 +1,3 @@
-/*
-* TODO: FUNKTIONIERT NOCH NICHT -> LIEFERT MAL WIEDER IMMER 0 !!! d.h. das muss ich wohl neu coden...
-*/
-
 #include <stdio.h>
 #include <stdlib.h>
 
