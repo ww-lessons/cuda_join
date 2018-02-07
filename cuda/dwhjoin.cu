@@ -93,7 +93,7 @@ int main(int argc, char *argv[]) {
         cudaMemcpy(dev_dim, dims[i], sizeof(DimTable) * DIM_SIZE, cudaMemcpyHostToDevice);
         join<<<1, 200>>>(dev_dim, DIM_SIZE, 
              dev_factIn, dev_factOut, FACT_SIZE, i);
-        //cudaDeviceSynchronize();        
+        cudaDeviceSynchronize();        
     }    
     printf("Join abgeschlossen\n");
 

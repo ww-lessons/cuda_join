@@ -3,13 +3,16 @@ die folgenden Werte erhalten.
 
 PARAMETER:
 
+```C
 #define KNZ_LEN 20
 #define DIM_COUNT 3
 #define DIM_SIZE 10000
 #define FACT_SIZE 250000
+```
 
 WERTE:
 
+```
 wiw39784@rechner:~/Dokumente/c/dwhjoin_experiment/bin$ time ./dwhjoin_simple
 Fakten und Dimmensionen vorbereitet
 Join abgeschlossen
@@ -63,3 +66,4 @@ KNZ0-4->4 | KNZ1-4->4 | KNZ2-4->4 |
 real    0m3.993s
 user    0m2.868s
 sys     0m1.068s
+```
