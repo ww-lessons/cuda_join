@@ -4,8 +4,8 @@
 
 #define KNZ_LEN 20
 #define DIM_COUNT 3
-#define DIM_SIZE 4000
-#define FACT_SIZE 1000000
+#define DIM_SIZE 10000
+#define FACT_SIZE 250000
 
 // Datenstruktur
 

@@ -7,8 +7,8 @@
 
 #define KNZ_LEN 20
 #define DIM_COUNT 3
-#define DIM_SIZE 4000
-#define FACT_SIZE 1000000
+#define DIM_SIZE 10000
+#define FACT_SIZE 250000
 
 // Datenstruktur
 
@@ -52,8 +52,7 @@ __global__ void join(DimTable *dim, int dim_len,
                 break;
             }
         }
-    }
-    out[0].id[0] = 100;
+    }    
 }
 
 int main(int argc, char *argv[]) {
@@ -92,9 +91,9 @@ int main(int argc, char *argv[]) {
     printf("Fakten und Dimmensionen vorbereitet\n");
     for(int i = 0; i < DIM_COUNT; i++) {
         cudaMemcpy(dev_dim, dims[i], sizeof(DimTable) * DIM_SIZE, cudaMemcpyHostToDevice);
-        join<<<1, 200>>>(dev_dim, DIM_SIZE, 
+        join<<<1, 100>>>(dev_dim, DIM_SIZE, 
              dev_factIn, dev_factOut, FACT_SIZE, i);
-        cudaDeviceSynchronize();        
+        //cudaDeviceSynchronize();        
     }    
     printf("Join abgeschlossen\n");
 

@@ -52,8 +52,7 @@ __global__ void join(DimTable *dim, int dim_len,
                 break;
             }
         }
-    }
-    out[0].id[0] = 100;
+    }    
 }
 
 int main(int argc, char *argv[]) {
